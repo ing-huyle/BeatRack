@@ -15,12 +15,6 @@ const App = () => {
     'Y', 'X', 'C'
   ];
 
-  const playAudio = (audioElement) => {
-    const audio = new Audio();
-    audio.src = audioElement.src;
-    audio.play();
-  }
-
   const toggleClass = (elementId, addClass, removeClass) => {
     $(`#${elementId}`).addClass(addClass);
     $(`#${elementId}`).removeClass(removeClass);
@@ -31,7 +25,7 @@ const App = () => {
     const audioElement = event.target.querySelector('audio');
 
     dispatch(textActions.new_text(drumPadId));
-    playAudio(audioElement);
+    audioElement.play();
     toggleClass(drumPadId, 'active', 'gray');
 
     if (timeoutRef) {
@@ -51,7 +45,7 @@ const App = () => {
       const drumPadId = audioElement.parentElement.id;
       
       dispatch(textActions.new_text(drumPadId));
-      playAudio(audioElement);
+      audioElement.play();
       toggleClass(drumPadId, 'active', 'gray');
     }
   }

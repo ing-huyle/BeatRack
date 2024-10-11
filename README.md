@@ -1,2 +1,2 @@
-# DrumMachine1
-This is my 3rd project.
+# DrumMachine2
+This project works the same as the DrumMachine1 except it uses SASS, jQuery, Redux toolkit and multiple components to demonstrate my knowledge. Of course, for such a small project it's not efficient.

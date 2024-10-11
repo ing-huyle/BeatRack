@@ -1,0 +1,16 @@
+.drum-pad {
+  padding: 30px 45px;
+  border-radius: 5px;
+  box-shadow: 4px 4px 5px #212121;
+}
+
+.drum-pad:hover {
+  cursor: pointer;
+  filter: brightness(80%);
+}
+
+@media (max-width: 450px) {
+  .drum-pad {
+    padding: 25px 40px;
+  }
+}

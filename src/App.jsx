@@ -24,7 +24,7 @@ const App = () => {
     const drumPadId = event.target.id;
     const audioElement = event.target.querySelector('audio');
 
-    dispatch(textActions.new_text(drumPadId));
+    dispatch(textActions.setText(drumPadId));
     audioElement.play();
     toggleClass(drumPadId, 'active', 'gray');
 
@@ -44,7 +44,7 @@ const App = () => {
       const audioElement = $(`#${key}`)[0];
       const drumPadId = audioElement.parentElement.id;
       
-      dispatch(textActions.new_text(drumPadId));
+      dispatch(textActions.setText(drumPadId));
       audioElement.play();
       toggleClass(drumPadId, 'active', 'gray');
     }

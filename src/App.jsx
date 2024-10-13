@@ -5,20 +5,21 @@ import { useSelector, useDispatch } from 'react-redux';
 import { textActions } from './textSlice';
 import DrumPad from './DrumPad';
 
+const keys = [
+  'Q', 'W', 'E',
+  'A', 'S', 'D',
+  'Y', 'X', 'C'
+];
+
+const toggleClass = (elementId, addClass, removeClass) => {
+  $(`#${elementId}`).addClass(addClass);
+  $(`#${elementId}`).removeClass(removeClass);
+}
+
 const App = () => {
   const text = useSelector((state) => state.text);
   const dispatch = useDispatch();
   const timeoutRef = useRef(null);
-  const keys = [
-    'Q', 'W', 'E',
-    'A', 'S', 'D',
-    'Y', 'X', 'C'
-  ];
-
-  const toggleClass = (elementId, addClass, removeClass) => {
-    $(`#${elementId}`).addClass(addClass);
-    $(`#${elementId}`).removeClass(removeClass);
-  }
 
   const handleClick = (event) => {
     const drumPadId = event.target.id;

@@ -132,6 +132,9 @@ const App = () => {
           src='https://cdn.freecodecamp.org/testable-projects-fcc/audio/Cev_H2.mp3'
         />
       </div>
+      <p>Coded by<a href='https://www.linkedin.com/in/ing-huyle' target='_blank'>ing.huyle</a><br/>
+        Designed by freeCodeCamp
+      </p>
     </div>
   )
 }

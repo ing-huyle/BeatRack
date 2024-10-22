@@ -1,6 +1,10 @@
+import { useContext } from 'react';
 import './styles/DrumPad.scss';
+import { HandleClickContext } from './App';
 
-const DrumPad = ({ idDrum, handleClick, idAudio, src }) => {
+const DrumPad = ({ idDrum, idAudio, src }) => {
+  const handleClick = useContext(HandleClickContext);
+  
   return (
     <div className='drum-pad gray' id={idDrum} onClick={handleClick}>
       {idAudio}

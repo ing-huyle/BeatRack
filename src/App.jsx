@@ -1,22 +1,64 @@
 import './styles/App.scss';
 import $ from 'jquery';
-import { useEffect, useRef, createContext } from 'react';
+import { useEffect, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { textActions } from './textSlice';
 import DrumPad from './DrumPad';
 
-const keys = [
-  'Q', 'W', 'E',
-  'A', 'S', 'D',
-  'Y', 'X', 'C'
+const drumPads = [
+  {
+    id: 'Heater-1',
+    key: 'Q',
+    src: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3'
+  },
+  {
+    id: 'Heater-2',
+    key: 'W',
+    src: 'https://cdn.freecodecamp.org/testable-projects-fcc/audio/Heater-2.mp3'
+  },
+  {
+    id: 'Heater-3',
+    key: 'E',
+    src: 'https://cdn.freecodecamp.org/testable-projects-fcc/audio/Heater-3.mp3'
+  },
+  {
+    id: 'Heater-4',
+    key: 'A',
+    src: 'https://cdn.freecodecamp.org/testable-projects-fcc/audio/Heater-4_1.mp3'
+  },
+  {
+    id: 'Clap',
+    key: 'S',
+    src: 'https://cdn.freecodecamp.org/testable-projects-fcc/audio/Heater-6.mp3'
+  },
+  {
+    id: 'Open-HH',
+    key: 'D',
+    src: 'https://cdn.freecodecamp.org/testable-projects-fcc/audio/Dsc_Oh.mp3'
+  },
+  {
+    id: 'Kick-n-Hat',
+    key: 'Y',
+    src: 'https://cdn.freecodecamp.org/testable-projects-fcc/audio/Kick_n_Hat.mp3'
+  },
+  {
+    id: 'Kick',
+    key: 'X',
+    src: 'https://cdn.freecodecamp.org/testable-projects-fcc/audio/RP4_KICK_1.mp3'
+  },
+  {
+    id: 'Closed-HH',
+    key: 'C',
+    src: 'https://cdn.freecodecamp.org/testable-projects-fcc/audio/Cev_H2.mp3'
+  }
 ];
+
+const keys = drumPads.map((drumPad => drumPad.key));
 
 const toggleClass = (elementId, addClass, removeClass) => {
   $(`#${elementId}`).addClass(addClass);
   $(`#${elementId}`).removeClass(removeClass);
 }
-
-export const HandleClickContext = createContext();
 
 const App = () => {
   const text = useSelector((state) => state.text);
@@ -79,53 +121,11 @@ const App = () => {
       <h1>Drum Machine</h1>
       <div id='display' className="gray">{text}</div>
       <div className='drum-pads'>
-        <HandleClickContext.Provider value={handleClick}>
-          <DrumPad
-            idDrum='Heater-1'
-            idAudio={keys[0]}
-            src='https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3'
-          />
-          <DrumPad
-            idDrum='Heater-2'
-            idAudio={keys[1]}
-            src='https://cdn.freecodecamp.org/testable-projects-fcc/audio/Heater-2.mp3'
-          />
-          <DrumPad
-            idDrum='Heater-3'
-            idAudio={keys[2]}
-            src='https://cdn.freecodecamp.org/testable-projects-fcc/audio/Heater-3.mp3'
-          />
-          <DrumPad
-            idDrum='Heater-4'
-            idAudio={keys[3]}
-            src='https://cdn.freecodecamp.org/testable-projects-fcc/audio/Heater-4_1.mp3'
-          />
-          <DrumPad
-            idDrum='Clap'
-            idAudio={keys[4]}
-            src='https://cdn.freecodecamp.org/testable-projects-fcc/audio/Heater-6.mp3'
-          />
-          <DrumPad
-            idDrum='Open-HH'
-            idAudio={keys[5]}
-            src='https://cdn.freecodecamp.org/testable-projects-fcc/audio/Dsc_Oh.mp3'
-          />
-          <DrumPad
-            idDrum='Kick-n-Hat'
-            idAudio={keys[6]}
-            src='https://cdn.freecodecamp.org/testable-projects-fcc/audio/Kick_n_Hat.mp3'
-          />
-          <DrumPad
-            idDrum='Kick'
-            idAudio={keys[7]}
-            src='https://cdn.freecodecamp.org/testable-projects-fcc/audio/RP4_KICK_1.mp3'
-          />
-          <DrumPad
-            idDrum='Closed-HH'
-            idAudio={keys[8]}
-            src='https://cdn.freecodecamp.org/testable-projects-fcc/audio/Cev_H2.mp3'
-          />
-        </HandleClickContext.Provider>
+        {
+          drumPads.map((drumPad) => (
+            <DrumPad idDrum={drumPad.id} key={drumPad.id} idAudio={drumPad.key} handleClick={handleClick} src={drumPad.src} />
+          ))
+        }
       </div>
       <p>Coded by<a href='https://www.linkedin.com/in/ing-huyle' target='_blank'>ing.huyle</a><br/>
         Designed by freeCodeCamp

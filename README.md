@@ -1,2 +1,6 @@
-# DrumMachine2
-This project works the same as the DrumMachine1 except it uses Redux toolkit and multiple components to demonstrate my knowledge.
+# Drum Machine
+A virtual drum pad. Built with React and Redux toolkit.
+
+## Skills & Technologies Used
+
+- Node.js, Vite, React, Redux toolkit

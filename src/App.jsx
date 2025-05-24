@@ -118,7 +118,7 @@ const App = () => {
 
   return (
     <div id='drum-machine'>
-      <h1>Drum Machine</h1>
+      <h1>BeatRack</h1>
       <div id='display' className="gray">{text}</div>
       <div className='drum-pads'>
         {

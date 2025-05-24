@@ -48,10 +48,15 @@ p {
 p > a {
   text-decoration: none;
   color: #000000;
-  background-color: #FFF1C0;
-  padding: 3px;
-  margin-inline: 3px;
-  border-radius: 3px;
+  padding-bottom: 1px;
+  border-radius: 2px;
+  border-bottom: 4px solid #FFD000;
+
+  span {
+    color: #FFD000;
+    font-size: 24px;
+    font-weight: 700;
+  }
 }
 
 @media (max-width: 450px) {

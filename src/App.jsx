@@ -127,7 +127,7 @@ const App = () => {
           ))
         }
       </div>
-      <p>Coded by<a href='https://www.linkedin.com/in/ing-huyle' target='_blank'>ing.huyle</a></p>
+      <p>Coded by <a href='https://www.linkedin.com/in/ing-huyle' target='_blank'>ing<span>.</span>huyle</a></p>
     </div>
   )
 }

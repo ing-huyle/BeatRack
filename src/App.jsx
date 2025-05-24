@@ -127,9 +127,7 @@ const App = () => {
           ))
         }
       </div>
-      <p>Coded by<a href='https://www.linkedin.com/in/ing-huyle' target='_blank'>ing.huyle</a><br/>
-        Designed by freeCodeCamp
-      </p>
+      <p>Coded by<a href='https://www.linkedin.com/in/ing-huyle' target='_blank'>ing.huyle</a></p>
     </div>
   )
 }

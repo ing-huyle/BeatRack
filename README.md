@@ -1,5 +1,5 @@
 # BeatRack
-A virtual drum pad ([see demo](https://taupe-yeot-65a7e1.netlify.app/)). Built with React and Redux toolkit.
+A virtual drum pad ([see demo](https://beatrack.netlify.app/)). Built with React and Redux toolkit.
 
 ## Skills & Technologies Used
 
